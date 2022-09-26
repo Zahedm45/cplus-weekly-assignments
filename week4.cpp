@@ -16,8 +16,18 @@ struct Tile {
 };
 
 
+
+typedef struct Player{
+    int x, y;
+}Player;
+
+
+
 #define NROWS 12
 #define NCOLS 16
+
+
+void display(Tile pTile[NROWS][NCOLS], Player player);
 
 
 int week4() {
@@ -37,5 +47,59 @@ int week4() {
         }
     }
 
+
+    Player player = {5, 5};
+
+    display(playground, player);
+
+
+
     return 0;
 }
+
+void display(Tile pTile[NROWS][NCOLS], Player player) {
+    for (int i = 0; i < NROWS; ++i) {
+        for (int j = 0; j < NCOLS; ++j) {
+            Tile crrTile = pTile[i][j];
+            if (crrTile.x == player.x  && crrTile.y == player.y) {
+                cout << "O";
+                continue;
+            }
+
+            if (pTile[i][j].isWall) {
+                cout << "*";
+            } else {
+                cout << " ";
+            }
+        }
+        cout <<""<< endl;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
