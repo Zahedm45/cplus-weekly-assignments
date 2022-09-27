@@ -39,7 +39,7 @@ int part1_4() {
 
     int columns, rows;
 
-    cin >> columns >> rows;
+    cin >> rows >> columns;
 
 
 
@@ -68,7 +68,7 @@ int part1_4() {
     }
 
 
-    Player player = {5, 5};
+    Player player = {columns/2, rows/2};
     display(rows, columns, playground, player);
 
 
