@@ -90,7 +90,7 @@ int part2_4() {
 }
 
 /*int main() {
-    week4();
+    part1_4();
     return 0;
 }*/
 

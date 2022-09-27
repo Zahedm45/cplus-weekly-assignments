@@ -34,7 +34,7 @@ typedef struct Player{
 void display(Tile pTile[NROWS][NCOLS], Player player);
 bool is_move_possible(Tile pTile[NROWS][NCOLS], Player player);
 
-int week4() {
+int part1_4() {
 
 
     Tile playground[NROWS][NCOLS];
@@ -109,7 +109,7 @@ int week4() {
 }
 
 /*int main() {
-    week4();
+    part1_4();
     return 0;
 }*/
 
