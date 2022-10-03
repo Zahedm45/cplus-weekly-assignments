@@ -13,6 +13,8 @@ void exercise1(vector<int> a, vector<int> b);
 
 void exercise2(vector<int> a, vector<int> b);
 
+void exercise3(vector<int> a, vector<int> b);
+
 int main() {
 
     vector<int> a, b;
@@ -47,7 +49,26 @@ int main() {
 
     //exercise1(a, b);
 
-    exercise2(a, b);
+    //exercise2(a, b);
+
+    exercise3(a, b);
+
+
+}
+
+void exercise3(vector<int> a, vector<int> b) {
+    int result = 0;
+    int i = 0;
+    while (i < a.size() && i < b.size()) {
+        int a_val = a[i];
+        int b_val = b[i];
+
+        result += a_val * b_val;
+
+        i++;
+    }
+
+    cout << result << endl;
 
 
 }
