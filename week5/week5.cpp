@@ -11,6 +11,8 @@ void print(vector<int> vector1);
 
 void exercise1(vector<int> a, vector<int> b);
 
+void exercise2(vector<int> a, vector<int> b);
+
 int main() {
 
     vector<int> a, b;
@@ -43,9 +45,31 @@ int main() {
     }
 
 
-    exercise1(a, b);
+    //exercise1(a, b);
+
+    exercise2(a, b);
 
 
+}
+
+void exercise2(vector<int> a, vector<int> b) {
+
+    int i = 0;
+    while (i < a.size() || i < b.size()) {
+
+        if (i < a.size()) {
+            int a_val = a[i];
+            cout << a_val << " ";
+
+        }
+
+        if (i < b.size()) {
+            int b_val = b[i];
+            cout << b_val << " ";
+        }
+
+        i++;
+    }
 
 
 }
