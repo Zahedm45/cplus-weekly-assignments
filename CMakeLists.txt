@@ -3,4 +3,4 @@ project(weekly_assignment)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(weekly_assignment main.cpp)
+add_executable(weekly_assignment main.cpp week5/week5.cpp)

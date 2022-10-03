@@ -171,10 +171,10 @@ void free_arr(int rows, int columns, Tile **pTile) {
 
 
 
-int main() {
+/*int main() {
     part1_4();
     return 0;
-}
+}*/
 
 
 
