@@ -75,7 +75,7 @@ int main() {
 
 using namespace std;
 
-int main(void){
+int main9(void){
 
     vector<Shape *> shapes;
 
