@@ -4,9 +4,6 @@
 #include <iostream>
 
 using namespace std;
-
-int levenshteinDistance(const string source, const string target);
-
 int main() {
 
 
@@ -18,22 +15,16 @@ int main() {
 
 
 
-
-/*    int n = token1.length();
-    int m = token2.length();*/
-    if (token1.size() == 0) {
-        return token2.size();
-    }
     if (token2.size() == 0) {
         return token1.size();
+
+    }else if (token1.size() == 0) {
+        return token2.size();
     }
 
-    // Good form to declare a TYPEDEF
 
-    typedef std::vector<std::vector<int> > Tmatrix;
-
-    Tmatrix matrix(token1.size() + 1);
-
+    typedef vector<vector<int> > Tmx;
+    Tmx matrix(token1.size() + 1);
 
     for (int i = 0; i <= token1.size(); i++) {
         matrix[i].resize(token2.size() + 1);
@@ -43,43 +34,42 @@ int main() {
         matrix[i][0] = i;
     }
 
-    for (int j = 0; j <= token2.size(); j++) {
-        matrix[0][j] = j;
+    for (int k = 0; k <= token2.size(); k++) {
+        matrix[0][k] = k;
     }
 
     for (int i = 1; i <= token1.size(); i++) {
+        char si = token1[i - 1];
+        for (int k = 1; k <= token2.size(); k++) {
+            char tj = token2[k - 1];
 
-        const char s_i = token1[i - 1];
-
-        for (int j = 1; j <= token2.size(); j++) {
-
-            const char t_j = token2[j - 1];
-
-            int cost;
-            if (s_i == t_j) {
-                cost = 0;
+            int track;
+            if (si == tj) {
+                track = 0;
             } else {
-                cost = 1;
+                track = 1;
             }
-
-            const int above = matrix[i - 1][j];
-            const int left = matrix[i][j - 1];
-            const int diag = matrix[i - 1][j - 1];
-            int cell = min(above + 1, min(left + 1, diag + cost));
-
-            if (i > 2 && j > 2) {
-                int trans = matrix[i - 2][j - 2] + 1;
-                if (token1[i - 2] != t_j) trans++;
-                if (s_i != token2[j - 2]) trans++;
-                if (cell > trans) cell = trans;
+            int d = matrix[i - 1][k - 1];
+            int a = matrix[i - 1][k];
+            int l = matrix[i][k - 1];
+            int c = min(a + 1, min(l + 1, d + track));
+            if (k > 2 && i > 2 ) {
+                int re = 1 + matrix[i - 2][k - 2];
+                if (token1[i - 2] != tj) {
+                    re++;
+                }
+                if (si != token2[k - 2]) {
+                    re++;
+                }
+                if (c > re) {
+                    c = re;
+                }
             }
-
-            matrix[i][j] = cell;
+            matrix[i][k] = c;
         }
     }
 
     cout <<  matrix[token1.size()][token2.size()] << " ";
-
 
 }
 
