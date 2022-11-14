@@ -19,39 +19,39 @@ int main() {
 
 
 
-    int n = token1.length();
-    int m = token2.length();
-    if (n == 0) {
-        return m;
+/*    int n = token1.length();
+    int m = token2.length();*/
+    if (token1.size() == 0) {
+        return token2.size();
     }
-    if (m == 0) {
-        return n;
+    if (token2.size() == 0) {
+        return token1.size();
     }
 
     // Good form to declare a TYPEDEF
 
     typedef std::vector<std::vector<int> > Tmatrix;
 
-    Tmatrix matrix(n + 1);
+    Tmatrix matrix(token1.size() + 1);
 
 
-    for (int i = 0; i <= n; i++) {
-        matrix[i].resize(m + 1);
+    for (int i = 0; i <= token1.size(); i++) {
+        matrix[i].resize(token2.size() + 1);
     }
 
-    for (int i = 0; i <= n; i++) {
+    for (int i = 0; i <= token1.size(); i++) {
         matrix[i][0] = i;
     }
 
-    for (int j = 0; j <= m; j++) {
+    for (int j = 0; j <= token2.size(); j++) {
         matrix[0][j] = j;
     }
 
-    for (int i = 1; i <= n; i++) {
+    for (int i = 1; i <= token1.size(); i++) {
 
         const char s_i = token1[i - 1];
 
-        for (int j = 1; j <= m; j++) {
+        for (int j = 1; j <= token2.size(); j++) {
 
             const char t_j = token2[j - 1];
 
@@ -78,7 +78,7 @@ int main() {
         }
     }
 
-    cout <<  matrix[n][m] << " ";
+    cout <<  matrix[token1.size()][token2.size()] << " ";
 
 
 }
