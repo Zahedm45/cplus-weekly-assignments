@@ -28,7 +28,7 @@ public:
     void print(void);       // This shoiuld print the list
 
 private:
-    Node * first;           // Pointer to the first (if any) element in the list
+    Node * first = NULL;           // Pointer to the first (if any) element in the list
 
 };
 

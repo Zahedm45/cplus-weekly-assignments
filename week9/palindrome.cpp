@@ -12,7 +12,7 @@
 
 using namespace std;
 
-int main() {
+int main_palindrome9() {
     string str;
     getline(cin, str);
 
