@@ -4,55 +4,90 @@
 
 #include <vector>
 #include <iostream>
+#include <map>
 
 using namespace std;
+
+int tree_size;
+int leaf_size;
+int tree_depth = 1;
+vector<string> vect;
+
+map<int, int> _map;
+
+
+struct Node{
+    Node *top;
+    Node *left;
+    Node *right;
+    int val;
+};
+
+Node head;
+
+
 int fibonacci2(int i);
-
-int main(){
-
-    string str;
-    getline(cin, str);
+void fibonacci3(int i);
 
 
-    vector<string> vectorStr;
+int main_week11(){
 
-    string delimiter = " ";
+    int n;
 
-    size_t pos = 0;
-    string token;
+    cin >> n;
+    int val = fibonacci2(n);
+    _map[n] = val;
 
-    while ((pos = str.find(delimiter)) != string::npos) {     // string::npos = -1
-        token = str.substr(0, pos);
-        vectorStr.push_back(token);
-        str.erase(0, pos + delimiter.length());
-    }
+    cout << "Call tree in pre-order: ";
+    fibonacci3(n);
+    cout << endl;
 
-    token = str.substr(0, pos);     // The last element
-    vectorStr.push_back(token);
-
-
-    for (string curr: vectorStr) {
-        int integer = stoi(curr);
-        int fib = fibonacci2(integer);
-        cout << fib << " ";
-
-    }
-
-    cout <<""<< endl;
-
-
+    cout << "Call tree size: "<< tree_size << endl;
+    cout << "Call tree depth: "<< tree_depth << endl;
+    cout << "Call tree leafs: "<< leaf_size << endl;
 
 
     return 0;
 }
 
+bool stop_depth = false;
+
+
 
 int fibonacci2(int i) {
 
+    tree_size++;
     if (i ==1 | i == 0) {
+        leaf_size++;
+        stop_depth = true;
         return 1;
     }
 
-    return fibonacci2(i-1) + fibonacci2(i-2);
+    if (!stop_depth){
+        tree_depth++;
+    }
+
+    int val1 = fibonacci2(i-1);
+    int val2 = fibonacci2(i-2);
+
+    _map[i-1] = val1;
+    _map[i-2] = val2;
+
+    return val1 + val2;
+}
+
+
+
+
+void fibonacci3(int i) {
+    cout << _map[i] << " ";
+
+    if (i ==1 | i == 0) {
+
+        return;
+    }
+
+    fibonacci3(i-1);
+    fibonacci3(i-2);
 
 }
