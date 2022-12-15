@@ -7,7 +7,7 @@ using namespace std;
 void run(int input);
 
 
-int main() {
+int main_factorization() {
     int input;
     cin >> input;
     run(input);
