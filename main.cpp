@@ -9,8 +9,8 @@ using namespace std;
 
 
 
-int main3() {
-
+int main() {
+    cout << "helloddd" << endl;
     return 0;
 }
 

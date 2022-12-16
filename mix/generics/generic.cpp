@@ -11,7 +11,7 @@ T find_max(T a, T b) {
 }
 
 
-int main() {
+int main_generic() {
 
     double val = find_max(10.3, 11.4);
     cout << val << endl;
