@@ -3,6 +3,8 @@
 using namespace std;
 
 int main() {
+    cout << "helloddd" << endl;
+
 
     Buffer *b = new LimitedBuffer(5, -999);
 
@@ -17,7 +19,7 @@ int main() {
     for (unsigned int i = 0; i < 3; i++) {
       cout << "Reading from the buffer returns: " << b->read() << endl;
     }
-    cout << "Current buffer occupancy: " << b->occupancy() << endl;
+    cout << "Current buffer occupancykk: " << b->occupancy() << endl;
 
     for (unsigned int i = 0; i < 10; i++) {
         b->write((i+1) * 100);

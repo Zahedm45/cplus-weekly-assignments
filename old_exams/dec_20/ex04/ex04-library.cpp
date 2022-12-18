@@ -11,3 +11,33 @@
 Buffer::~Buffer() {
     // Empty destructor
 }
+
+LimitedBuffer::LimitedBuffer(unsigned int a, int b) {
+    this->maximum_buffer = a;
+    this->default_val = b;
+}
+
+
+void LimitedBuffer::write(int v) {
+
+
+    if (counter < maximum_buffer) {
+        counter++;
+        queue.push_back(v);
+
+    }
+}
+
+int LimitedBuffer::read() {
+
+    if (queue.empty()) return default_val;
+
+    int val = queue[0];
+    queue.erase(queue.begin());
+    counter--;
+    return val;
+}
+
+unsigned int LimitedBuffer::occupancy() {
+    return counter;
+}
