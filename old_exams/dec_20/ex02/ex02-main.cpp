@@ -1,31 +1,32 @@
 #include <iostream>
+#include <string>
 #include "ex02-library.h"
+
 using namespace std;
 
-int main20_2() {
+int main() {
     Elem e0 = {10, 5, nullptr};
     Elem e1 = {12, 6, &e0};
     Elem e2 = {4, 10, &e1};
-    
-    cout << "The RLE list is: " << endl;
+
+    cout << "Initial list:" << endl;
     displayRLEList(&e2);
     cout << endl;
 
-    cout << "Its lenght is: " << length(&e2) << endl;
-
+    Elem *l1 = append(&e2, 10);
+    cout << "After we append value 10:" << endl;
+    displayRLEList(l1);
     cout << endl;
 
-    int data[] = {1, 2, 3, 3, 3, 4, 5};
-    Elem *list = buildRLEList(data, 7);
-    cout << "The new RLE list is: " << endl;
-    displayRLEList(list);
+    Elem *l2 = append(l1, 42);
+    cout << "After we append value 42:" << endl;
+    displayRLEList(l2);
     cout << endl;
 
-    cout << "Its lenght is: " << length(list) << endl;
-    Elem *list2 = append(list, 5);
-    cout << "After we append 5, the resulting RLE list is: " << endl;
-    displayRLEList(list2);
+    cout << "If we append 42 to an empty list:" << endl;
+    Elem *l3 = append(nullptr, 42);
+    displayRLEList(l3);
     cout << endl;
-    
+
     return 0;
 }
