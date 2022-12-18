@@ -1,2 +1,8 @@
 # Project exclude paths
 /cmake-build-debug/
+/old_exams/dec_20/.idea/
+/old_exams/dec_20/cmake-build-debug/
+/old_exams/dec_21/.idea/
+/old_exams/dec_21/cmake-build-debug/
+/old_exams/may_21/.idea/
+/old_exams/may_21/cmake-build-debug/
