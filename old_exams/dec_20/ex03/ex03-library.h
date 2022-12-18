@@ -11,6 +11,7 @@ struct Info {
     unsigned int score;
 };
 
+
 class SongDatabase {
 private:
     vector<string> songs;

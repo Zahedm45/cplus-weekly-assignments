@@ -2,7 +2,7 @@
 #include "ex03-library.h"
 using namespace std;
 
-int main20_3() {
+int main() {
     SongDatabase db = SongDatabase();
 
     db.addSong("Ob-La-Di, Ob-La-Da", "https://youtu.be/_J9NpHKrKMw", 4);
