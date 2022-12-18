@@ -1,107 +1,19 @@
 cmake_minimum_required(VERSION 3.21)
-project(all_codes)
+project(weekly_assignment)
 
 set(CMAKE_CXX_STANDARD 14)
 
-include_directories(old_exams/dec_20/ex01)
-include_directories(old_exams/dec_20/ex02)
-include_directories(old_exams/dec_20/ex03)
-include_directories(old_exams/dec_20/ex04)
-include_directories(old_exams/dec_21/ex01)
-include_directories(old_exams/dec_21/ex02)
-include_directories(old_exams/dec_21/ex03)
-include_directories(old_exams/dec_21/ex04)
-include_directories(old_exams/may_21/ex01)
-include_directories(old_exams/may_21/ex02)
-include_directories(old_exams/may_21/ex03)
-include_directories(old_exams/may_21/ex04)
-include_directories(old_exams/may_22/may_22/ex01)
-include_directories(old_exams/may_22/may_22/ex02)
-include_directories(old_exams/may_22/may_22/ex03)
-include_directories(old_exams/may_22/may_22/ex04)
-include_directories(weekly_assignment/old_exams/may_22/ex01)
-include_directories(weekly_assignment/old_exams/may_22/ex02)
-include_directories(weekly_assignment/old_exams/may_22/ex03)
-include_directories(weekly_assignment/old_exams/may_22/ex04)
-include_directories(weekly_assignment/week10)
-include_directories(weekly_assignment/week8)
+add_executable(weekly_assignment main.cpp week5/week5.cpp week8/week8.cpp week8/shapes.cpp
+        week8/shapes.h week9/fibonacci.cpp week9/Levenshtein.cpp week9/Reverse.cpp
+        week9/palindrome.cpp week10/List.cpp week10/List.h week11/FibonacciTrees.cpp
+        week2/factorization.cpp mix/write_read_file/write_read_file.cpp mix/generics/generic.cpp
+        old_exams/may_22/ex01/ex01-main.cpp old_exams/may_22/ex01/ex01-library.cpp
+        old_exams/may_22/ex02/ex02-library.cpp
+        old_exams/may_22/ex02/ex02-main.cpp
+        old_exams/may_22/ex03/ex03-library.cpp
+        old_exams/may_22/ex03/ex03-main.cpp
+        old_exams/may_22/ex04/ex04-library.cpp
+        old_exams/may_22/ex04/ex04-main.cpp
 
-add_executable(all_codes
-        old_exams/dec_20/ex01/ex01-library.cpp
-        old_exams/dec_20/ex01/ex01-library.h
-        old_exams/dec_20/ex01/ex01-main.cpp
-        old_exams/dec_20/ex02/ex02-library.cpp
-        old_exams/dec_20/ex02/ex02-library.h
-        old_exams/dec_20/ex02/ex02-main.cpp
-        old_exams/dec_20/ex03/ex03-library.cpp
-        old_exams/dec_20/ex03/ex03-library.h
-        old_exams/dec_20/ex03/ex03-main.cpp
-        old_exams/dec_20/ex04/ex04-library.cpp
-        old_exams/dec_20/ex04/ex04-library.h
-        old_exams/dec_20/ex04/ex04-main.cpp
-        old_exams/dec_21/ex01/ex01-library.cpp
-        old_exams/dec_21/ex01/ex01-library.h
-        old_exams/dec_21/ex01/ex01-main.cpp
-        old_exams/dec_21/ex02/ex02-library.cpp
-        old_exams/dec_21/ex02/ex02-library.h
-        old_exams/dec_21/ex02/ex02-main.cpp
-        old_exams/dec_21/ex03/ex03-library.cpp
-        old_exams/dec_21/ex03/ex03-library.h
-        old_exams/dec_21/ex03/ex03-main.cpp
-        old_exams/dec_21/ex04/ex04-library.cpp
-        old_exams/dec_21/ex04/ex04-library.h
-        old_exams/dec_21/ex04/ex04-main.cpp
-        old_exams/may_21/ex01/ex01-library.cpp
-        old_exams/may_21/ex01/ex01-library.h
-        old_exams/may_21/ex01/ex01-main.cpp
-        old_exams/may_21/ex02/ex02-library.cpp
-        old_exams/may_21/ex02/ex02-library.h
-        old_exams/may_21/ex02/ex02-main.cpp
-        old_exams/may_21/ex03/ex03-library.cpp
-        old_exams/may_21/ex03/ex03-library.h
-        old_exams/may_21/ex03/ex03-main.cpp
-        old_exams/may_21/ex04/ex04-library.cpp
-        old_exams/may_21/ex04/ex04-library.h
-        old_exams/may_21/ex04/ex04-main.cpp
-        old_exams/may_22/may_22/ex01/ex01-library.cpp
-        old_exams/may_22/may_22/ex01/ex01-library.h
-        old_exams/may_22/may_22/ex01/ex01-main.cpp
-        old_exams/may_22/may_22/ex02/ex02-library.cpp
-        old_exams/may_22/may_22/ex02/ex02-library.h
-        old_exams/may_22/may_22/ex02/ex02-main.cpp
-        old_exams/may_22/may_22/ex03/ex03-library.cpp
-        old_exams/may_22/may_22/ex03/ex03-library.h
-        old_exams/may_22/may_22/ex03/ex03-main.cpp
-        old_exams/may_22/may_22/ex04/ex04-library.cpp
-        old_exams/may_22/may_22/ex04/ex04-library.h
-        old_exams/may_22/may_22/ex04/ex04-main.cpp
-        weekly_assignment/mix/generics/generic.cpp
-        weekly_assignment/mix/write_read_file/write_read_file.cpp
-        weekly_assignment/old_exams/may_22/ex01/ex01-library.cpp
-        weekly_assignment/old_exams/may_22/ex01/ex01-library.h
-        weekly_assignment/old_exams/may_22/ex01/ex01-main.cpp
-        weekly_assignment/old_exams/may_22/ex02/ex02-library.cpp
-        weekly_assignment/old_exams/may_22/ex02/ex02-library.h
-        weekly_assignment/old_exams/may_22/ex02/ex02-main.cpp
-        weekly_assignment/old_exams/may_22/ex03/ex03-library.cpp
-        weekly_assignment/old_exams/may_22/ex03/ex03-library.h
-        weekly_assignment/old_exams/may_22/ex03/ex03-main.cpp
-        weekly_assignment/old_exams/may_22/ex04/ex04-library.cpp
-        weekly_assignment/old_exams/may_22/ex04/ex04-library.h
-        weekly_assignment/old_exams/may_22/ex04/ex04-main.cpp
-        weekly_assignment/week1/week1.cpp
-        weekly_assignment/week10/List.cpp
-        weekly_assignment/week10/List.h
-        weekly_assignment/week11/FibonacciTrees.cpp
-        weekly_assignment/week2/factorization.cpp
-        weekly_assignment/week4/part1_4.cpp
-        weekly_assignment/week4/part2_4.cpp
-        weekly_assignment/week5/week5.cpp
-        weekly_assignment/week8/shapes.cpp
-        weekly_assignment/week8/shapes.h
-        weekly_assignment/week8/week8.cpp
-        weekly_assignment/week9/fibonacci.cpp
-        weekly_assignment/week9/Levenshtein.cpp
-        weekly_assignment/week9/palindrome.cpp
-        weekly_assignment/week9/Reverse.cpp
-        weekly_assignment/main.cpp)
+
+        )
