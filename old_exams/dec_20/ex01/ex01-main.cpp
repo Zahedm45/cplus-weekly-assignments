@@ -2,11 +2,8 @@
 #include "ex01-library.h"
 using namespace std;
 
-int main20_1() {
-
-    cout << "here" << endl;
-
-/*    Complex c = {3, 1};
+int main() {
+    Complex c = {3, 1};
     Complex d = {2, -2};
 
     Complex **A = createMatrix(3, 3, c);
@@ -41,6 +38,6 @@ int main20_1() {
 
     deleteMatrix(A, 3); deleteMatrix(B, 3);
     deleteMatrix(C, 2);
-    deleteMatrix(R, 3); deleteMatrix(I, 3);*/
+    deleteMatrix(R, 3); deleteMatrix(I, 3);
     return 0;
 }
