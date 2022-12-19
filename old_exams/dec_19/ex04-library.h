@@ -18,6 +18,43 @@ public:
 	virtual void moveLeft()=0;
 };
 
+
+class BlackPiece : public Piece{
+private:
+/*    int curr_row;
+    int curr_col;*/
+public:
+    BlackPiece(int a, int b);
+
+
+    string getColor() override;
+
+    string printCode() override;
+
+    void moveRight() override;
+
+    void moveLeft() override;
+};
+
+
+class WhitePiece : public Piece{
+private:
+/*    int curr_row;
+    int curr_col;*/
+
+public:
+    WhitePiece(int a, int b);
+
+    string getColor() override;
+
+    string printCode() override;
+
+    void moveRight() override;
+
+    void moveLeft() override;
+};
+
+
 //Exercise 4 (a) declare WhitePiece
 //put your code here
 
