@@ -37,6 +37,22 @@ cell ** createAndInitBoard(int n){
 //Exercise 1 (b) Implement this function
 cell ** duplicateBoard(cell ** A, int n){
 	//put your code here
+    if (n < 1) return nullptr;
+    cell **board = new cell*[n];
+
+    for (int i = 0; i < n; ++i) {
+        board[i] = new cell[n];
+    }
+
+
+    for (int i = 0; i < n; ++i) {
+        for (int j = 0; j < n; ++j) {
+            board[i][j].color = A[i][j].color;
+            board[i][j].status = A[i][j].status;
+        }
+    }
+
+    return board;
 }
 
 //Exercise 1 (c) Implement this function
