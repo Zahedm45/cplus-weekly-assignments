@@ -47,6 +47,14 @@ int WordsList::distancePalindrome(string s){
 //Exercise 3 (c) implement this method
 void WordsList::addWord(string word){
 	//put your code here
+
+    //if (word.empty()) return;
+    if (std::count(allWords.begin(), allWords.end(), word)){}
+    else {
+        allWords.push_back(word);
+        wordsToPalindromeDistance[word] = distancePalindrome(word);
+    }
+
 }
 
 //Exercise 3 (d) implement this method
