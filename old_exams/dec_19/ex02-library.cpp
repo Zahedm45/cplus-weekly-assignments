@@ -26,7 +26,19 @@ bool isPalindrome(string s, int n1, int n2){
     return false;
 }
 
+
+int counter = 0;
 //Exercise 2 (c) Implement this function
 int distancePalindrome(string s, int n1, int n2){
 	//put your code here
+
+    if (n1 >= n2) {
+        int result = counter;
+        counter = 0;
+        return result;
+    }
+
+    if (s[n1] != s[n2]) counter++;
+    return distancePalindrome(s, n1+1, n2-1);
+
 }
