@@ -27,6 +27,21 @@ void WordsList::print(){
 //Exercise 3 (b) implement this method
 int WordsList::distancePalindrome(string s){
 	//put your code here
+
+    if (s.empty()) return 0;
+
+    int n1 = 0;
+    int n2 = s.size()-1;
+    int counter = 0;
+
+    while (n1 < n2) {
+
+        if (s[n1] != s[n2]) counter++;
+        n1++;
+        n2--;
+    }
+
+    return counter;
 }
 
 //Exercise 3 (c) implement this method
