@@ -17,6 +17,13 @@ string reverse(string s, int n){
 //Exercise 2 (b) Implement this function
 bool isPalindrome(string s, int n1, int n2){
 	//put your code here
+    if (n1 >= n2 || s.empty()) return true;
+
+    if (s[n1] == s[n2]){
+       return isPalindrome(s, n1+1, n2-1);
+    }
+
+    return false;
 }
 
 //Exercise 2 (c) Implement this function
