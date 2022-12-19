@@ -60,4 +60,11 @@ void WordsList::addWord(string word){
 //Exercise 3 (d) implement this method
 int WordsList::palindromeWords(){
 	//put your code here
+
+    int counter = 0;
+    for (const auto &item : allWords){
+        if (distancePalindrome(item) == 0) counter++;
+    }
+
+    return counter;
 }
