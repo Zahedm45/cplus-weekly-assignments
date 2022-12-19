@@ -12,6 +12,16 @@ WordsList::WordsList(){
 //Exercise 3 (a) implement this method
 void WordsList::print(){
 	//put your code here
+
+    cout << allWords.size() << " words:";
+
+    for (const auto &item : allWords) {
+        int val = wordsToPalindromeDistance[item];
+        cout << " " << item << " (" << val << ")";
+    }
+
+
+
 }
 
 //Exercise 3 (b) implement this method
