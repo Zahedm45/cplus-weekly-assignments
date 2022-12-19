@@ -71,7 +71,6 @@ bool moveRight(cell ** A,int n,int r, int c){
         A[r][c].status = emptyC;
         return true;
     }
-
     else if (soursCell.status == whitePiece) {
         if (c >= n-1) return false;
 
@@ -89,6 +88,27 @@ bool moveRight(cell ** A,int n,int r, int c){
 //Exercise 1 (d) Implement this function
 bool moveLeft(cell ** A,int n,int r, int c){
 	//put your code here
+
+    cell soursCell = A[r][c];
+    if (soursCell.status == emptyC) return false;
+
+    if (soursCell.status == blackPiece) {
+        if (c > n-2) return false;
+        if (A[r+1][c+1].status != emptyC) return false;
+        A[r+1][c+1].status = soursCell.status;
+        A[r][c].status = emptyC;
+        return true;
+    }
+    else if (soursCell.status == whitePiece) {
+        if (c <= 0) return false;
+        if (A[r-1][c-1].status != emptyC) return false;
+        A[r - 1][c - 1].status = soursCell.status;
+        A[r][c].status = emptyC;
+        return true;
+    }
+
+    return false;
+
 }
 
 //Do not modify

@@ -3,34 +3,31 @@
 
 using namespace std;
 
-void testMoveRight(cell ** b,int n,int r,int c){
-	bool moved=moveRight(b,n,r,c);
-	cout<<"(" <<r<<','<<c<<") can";
-	cout<<(moved?"":"'t") <<" move right"<<endl;
-	printBoard(b,n);
-}
 void testMoveLeft(cell ** b,int n,int r,int c){
-	bool moved=moveLeft(b,n,r,c);
-	cout<<"(" <<r<<','<<c<<") can";
-	cout<<(moved?"":"'t") <<" move left"<<endl;
-	printBoard(b,n);
+    bool moved=moveLeft(b,n,r,c);
+    cout<<"(" <<r<<','<<c<<") can";
+    cout<<(moved?"":"'t") <<" move left"<<endl;
+    printBoard(b,n);
 }
 
 int main() {
-	int n=8;
-	cell ** b = createAndInitBoard(n);
-	printBoard(b,n);
+    int n=8;
+    cell ** b;
+    /* Hidden code for the creation and initialization of the board b.
+     * This has been hidden to avoid to disclose the solution to point a.
+     * If you solved point a, you can just add: createAndInitBoard(n);
+     */
+    printBoard(b,n);
 
-	cell ** copy = duplicateBoard(b,n);
+    testMoveLeft(b,n,2,3);
+    testMoveLeft(b,n,3,4);
 
-	testMoveRight(b,n,2,1);
-	testMoveRight(b,n,3,0);
-	testMoveLeft(b,n,3,0);
+    testMoveLeft(b,n,1,6);
+    testMoveLeft(b,n,2,7);
 
-	testMoveRight(b,n,5,6);
-	testMoveLeft(b,n,4,7);
+    testMoveLeft(b,n,5,6);
+    testMoveLeft(b,n,5,0);
+    testMoveLeft(b,n,6,1);
 
-	cout <<"The copy:"<<endl;
-	printBoard(copy,n);
-	return 0;
+    return 0;
 }
