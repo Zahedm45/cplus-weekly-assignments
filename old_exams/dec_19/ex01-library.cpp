@@ -6,6 +6,32 @@ using namespace std;
 //Exercise 1 (a) Implement this function
 cell ** createAndInitBoard(int n){
 	//put your code here
+
+    if (n < 1) return nullptr;
+
+    cell **board = new cell*[n];
+
+    for (int i = 0; i < n; ++i) {
+        board[i] = new cell[n];
+    }
+
+    for (int i = 0; i < n; ++i) {
+        for (int j = 0; j < n; ++j) {
+            board[i][j].color = computeColor(i, j);
+
+            cellStatus status = emptyC;
+
+            if (board[i][j].color == dark) {
+                if (i < 3) status = blackPiece;
+                else if (i + 3 >= n) status = whitePiece;
+            }
+
+            board[i][j].status = status;
+
+        }
+    }
+
+    return board;
 }
 
 //Exercise 1 (b) Implement this function
