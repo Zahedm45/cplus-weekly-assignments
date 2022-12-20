@@ -33,11 +33,6 @@ T Node<T>::getValue(){
 template<class T>
 void Node<T>::addChild(Node<T> * child){
 	//put your code here
-
-/*    for (const auto &item : this->children) {
-        if (child.)
-    }*/
-
     this->children.push_back(child);
 }
 
