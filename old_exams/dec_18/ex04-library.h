@@ -22,6 +22,8 @@ class Node{
 		int countMembersOfSubTree();
 
     virtual ~Node();
+
+    void printLeapNodesHelper(Node<T> *pNode);
 };
 
 #endif

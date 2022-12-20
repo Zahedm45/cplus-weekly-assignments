@@ -21,23 +21,34 @@ Node<T>::Node(string name, T value){
 template<class T>
 string Node<T>::getName(){
 	//put your code here
+    return name;
 }
 
 template<class T>
 T Node<T>::getValue(){
 	//put your code here
+    return value;
 }
 
 template<class T>
 void Node<T>::addChild(Node<T> * child){
 	//put your code here
+
+/*    for (const auto &item : this->children) {
+        if (child.)
+    }*/
+
+    this->children.push_back(child);
 }
 
 //Exercise 4 (c) Implement this method
 template<class T>
 void Node<T>::printLeafNodes(){
-	//put your code here
+    printLeapNodesHelper(this);
+    cout << endl;
+
 }
+
 
 //Exercise 4 (d) Implement this method
 template<class T>
@@ -52,6 +63,18 @@ Node<T>::~Node() {
     }
 
 
+}
+
+template<class T>
+void Node<T>::printLeapNodesHelper(Node<T> *pNode) {
+
+    if (pNode->children.empty()) {
+        cout << pNode->name << " " << pNode->value << " ";
+    }
+
+    for (const auto &item : pNode->children) {
+        printLeapNodesHelper(item);
+    }
 }
 
 //Do not modify
