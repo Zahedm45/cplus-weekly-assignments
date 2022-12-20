@@ -32,9 +32,26 @@ double TemperatureScalesConverter::convertToF(double CTemperature){
 //Exercise 3 (c) Implement this method
 double TemperatureScalesConverter::convertToC(double FTemperature){
 	//put your code here
+    return (FTemperature -32) * 0.56;
 }
 
 //Exercise 3 (d) Implement this method
 bool TemperatureScalesConverter::addMeasurement(string scale, double temperature){
 	//put your code here
+
+    if (scale == "C") {
+        double val = convertToF(temperature);
+        FTemperatures.push_back(val);
+        CTemperatures.push_back(temperature);
+        return true;
+
+    } else if (scale == "F"){
+        double val = convertToC(temperature);
+        FTemperatures.push_back(temperature);
+        CTemperatures.push_back(val);
+        return true;
+    }
+
+
+    return false;
 }
