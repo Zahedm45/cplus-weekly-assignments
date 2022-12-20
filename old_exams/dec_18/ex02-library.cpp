@@ -9,10 +9,12 @@ int Node::countChildren(){
 //Exercise 2 (a) Implement the constructor and getName()
 Node::Node(string name){
 	//put your code here
+    this->name = name;
 }
 
 string Node::getName(){
 	//put your code here
+    return this->name;
 }
 
 //Exercise 2 (b) Implement this method
