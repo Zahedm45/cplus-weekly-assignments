@@ -58,8 +58,8 @@ add_executable(weekly_assignment main.cpp week5/week5.cpp week8/week8.cpp week8/
         old_exams/may_22/ex04/ex04-main.cpp]]
 
 
-        old_exams/dec_18/ex04-library.cpp
-        old_exams/dec_18/ex04-main.cpp
+        old_exams/dec_18/ex01-library.cpp
+        old_exams/dec_18/ex01-main.cpp
 
 
 

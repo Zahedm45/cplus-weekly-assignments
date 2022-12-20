@@ -5,7 +5,9 @@ using namespace std;
 
 //Exercise 1 (a) Check and correct if necessary
 double * createAndInitArray(unsigned int n, double value){
-	double * A = new double;
+	double *A = new double[n];
+
+
 	for(unsigned int i = 0; i<=value+1; i++){
 		A[i] = value;
 	}
