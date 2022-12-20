@@ -38,4 +38,11 @@ void Node::printParentNodes(){
 //Exercise 2 (d) Implement this method
 void Node::printMembersOfSubTree(int generation){
 	//put your code here
+
+    cout << this->name << " " << generation << " ";
+    for (const auto &item : this->children) {
+        item->printMembersOfSubTree(generation + 1);
+    }
+
+
 }
