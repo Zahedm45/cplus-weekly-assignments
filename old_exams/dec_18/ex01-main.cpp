@@ -5,44 +5,23 @@
 using namespace std;
 
 int main(void){
+    unsigned int n = 4;
 
-	// Array containing Celsius
-	// temperatures initialized to 100
-	unsigned int n = 4;
-	double *A = createAndInitArray(n,100);
-	
-	// Setting some values in the array
-	unsigned int m = 3;
-	for(int i=0;i<n-1;i++){
-		for(int j=0;j<m-1;j++){
-			A[i]+=i*n+j*3;
-		}
-	}
-	printArray(A,n,"main array");
+    double * A = createAndInitArray(n,1);
+    printArray(A,n,"first A");
 
-	double * B = duplicateArray(A,n);
-	printArray(B,n,"copy");
+    //Store old copy of A
+    double * B = A;
 
-	//I change B, and I print B and A
-	B[0] = B[0]+3;
-	B[1] = B[0]+3;
-	B[2] = B[1]+3;
+    //Create new A, and print it
+    A = createAndInitArray(n,2);
+    printArray(A,n,"second A");
 
-	printArray(B,n,"modified copy");
-	printArray(A,n,"main array");
+    //Modify old copy of A
+    B[0]=0;
 
-	//I deallocate B
-	deallocateArray(B);
+    //Print again the new copy of A. It should have not changed
+    printArray(A,n,"unmodified second A");
 
-	//I convert to Fahrenheit
-	double * C = toFahrenheit(A,n);
-	printArray(C,n,"Fahrenheit copy");
-	printArray(A,n,"main array not modified");
-
-	//I deallocate A and C
-	deallocateArray(A);
-	deallocateArray(C);
-	
-	cout << "Completed"<<endl;
-	return 0;
+    return 0;
 }

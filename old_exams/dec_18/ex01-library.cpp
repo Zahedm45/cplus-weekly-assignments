@@ -7,8 +7,7 @@ using namespace std;
 double * createAndInitArray(unsigned int n, double value){
 	double *A = new double[n];
 
-
-	for(unsigned int i = 0; i<=value+1; i++){
+	for(unsigned int i = 0; i< n; i++){
 		A[i] = value;
 	}
 	return A;
@@ -30,11 +29,22 @@ double * duplicateArray(double * A, unsigned int n){
 //Exercise 1 (c) Implement this function
 void deallocateArray(double * A){
 	//put your code here
+
+    if (A == nullptr) return;
+    delete[] A;
 }
 
 //Exercise 1 (d) Implement this function
 double * toFahrenheit(double * A, unsigned int n){
 	//put your code here
+
+    double *B = new double[n];
+
+    for (int i = 0; i < n; ++i) {
+        B[i] = A[i] * 1.8 + 32;
+    }
+
+    return B;
 }
 
 //Do not modify
