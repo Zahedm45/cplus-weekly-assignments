@@ -13,6 +13,8 @@ void Node<T>::printNode(){
 //Exercise 4 (a) Check and correct if necessary
 template<class T>
 Node<T>::Node(string name, T value){
+    this->name = name;
+    this->value = value;
 }
 
 //Exercise 4 (b) Implement getName, getValue, and addChild
@@ -41,6 +43,15 @@ void Node<T>::printLeafNodes(){
 template<class T>
 int Node<T>::countMembersOfSubTree(){
 	//put your code here
+}
+
+template<class T>
+Node<T>::~Node() {
+    for (const auto &child : children){
+        delete child;
+    }
+
+
 }
 
 //Do not modify

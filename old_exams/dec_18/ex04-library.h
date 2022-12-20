@@ -20,6 +20,8 @@ class Node{
 		void addChild(Node * child);
 		void printLeafNodes();
 		int countMembersOfSubTree();
+
+    virtual ~Node();
 };
 
 #endif
