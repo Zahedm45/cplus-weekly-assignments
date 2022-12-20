@@ -25,10 +25,14 @@ void Node::addChild(Node * child){
 
 //Exercise 2 (c) Check and correct if necessary
 void Node::printParentNodes(){
-	for(int i=0; i<children.size()-1;i++){
-		children[i]->printParentNodes();
-	}
-	cout << this->name << ' ';
+    if (!this->children.empty()) {
+        cout << this->name << ' ';
+    }
+
+    for (const auto &item : this->children) {
+        item->printParentNodes();
+    }
+
 }
 
 //Exercise 2 (d) Implement this method
