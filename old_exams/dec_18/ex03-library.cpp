@@ -11,14 +11,14 @@ TemperatureScalesConverter::TemperatureScalesConverter() {
 //Exercise 3 (a) Check and correct this method
 void TemperatureScalesConverter::print(){
 	cout << CTemperatures.size() <<" Celsius measurements:";
-	for(int i = 0; i < CTemperatures.size() - 1; i++){
-		cout<< ' ' << CTemperatures[i];
+	for(int i = 0; i < CTemperatures.size(); i++){
+		cout<< " " << CTemperatures[i];
 	}
 	cout << endl;
 	
 	cout << FTemperatures.size() <<" Fahrenheit measurements:";
-	for(int i = CTemperatures.size() - 1; i > 0; i--){
-		cout<< ' ' << CTemperatures[i];
+	for(int i = 0;  i < FTemperatures.size(); i++){
+		cout<< ' ' << FTemperatures[i];
 	}
 	cout << endl;
 }
