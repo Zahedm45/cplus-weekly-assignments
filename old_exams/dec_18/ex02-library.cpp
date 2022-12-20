@@ -20,6 +20,7 @@ string Node::getName(){
 //Exercise 2 (b) Implement this method
 void Node::addChild(Node * child){
 	//put your code here
+    this->children.push_back(child);
 }
 
 //Exercise 2 (c) Check and correct if necessary
