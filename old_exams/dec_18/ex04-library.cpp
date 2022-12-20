@@ -36,30 +36,6 @@ void Node<T>::addChild(Node<T> * child){
     this->children.push_back(child);
 }
 
-//Exercise 4 (c) Implement this method
-template<class T>
-void Node<T>::printLeafNodes(){
-    printLeapNodesHelper(this);
-    cout << endl;
-
-}
-
-
-//Exercise 4 (d) Implement this method
-template<class T>
-int Node<T>::countMembersOfSubTree(){
-	//put your code here
-    return memberCounter(this, 1);
-}
-
-template<class T>
-Node<T>::~Node() {
-    for (const auto &child : children){
-        delete child;
-    }
-
-
-}
 
 template<class T>
 void Node<T>::printLeapNodesHelper(Node<T> *pNode) {
@@ -85,6 +61,44 @@ int Node<T>::memberCounter(Node<T> *pNode, int i) {
 
     return i;
 }
+
+
+
+//Exercise 4 (c) Implement this method
+template<class T>
+void Node<T>::printLeafNodes(){
+    printLeapNodesHelper(this);
+    cout << endl;
+
+}
+
+
+//Exercise 4 (d) Implement this method
+template<class T>
+int Node<T>::countMembersOfSubTree(){
+	//put your code here
+    return memberCounter(this, 1);
+}
+
+
+
+template<class T>
+Node<T>::~Node() {
+    for (const auto &child : children){
+        delete child;
+    }
+}
+
+/*template<class T>
+Node<T>::~Node() {
+    for (const auto &child : children){
+        delete child;
+    }
+
+
+}*/
+
+
 
 //Do not modify
 template class Node<string>;

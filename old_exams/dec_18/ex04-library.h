@@ -13,19 +13,19 @@ class Node{
 		T value;
 		vector<Node *> children;
 	public:
-		void printNode();
+        void printNode();
 		Node(string name, T value);
-		string getName();
+        ~Node();
+        string getName();
 		T getValue();
 		void addChild(Node * child);
 		void printLeafNodes();
 		int countMembersOfSubTree();
+        //virtual ~Node();
+        void printLeapNodesHelper(Node<T> *pNode);
+        int memberCounter(Node<T> *pNode, int i);
 
-    virtual ~Node();
 
-    void printLeapNodesHelper(Node<T> *pNode);
-
-    int memberCounter(Node<T> *pNode, int i);
 };
 
 #endif
