@@ -25,7 +25,8 @@ void TemperatureScalesConverter::print(){
 
 //Exercise 3 (b) Implement this method
 double TemperatureScalesConverter::convertToF(double CTemperature){
-	//put your code here
+	//put your code here'
+    return CTemperature * 1.8 + 32;
 }
 
 //Exercise 3 (c) Implement this method
