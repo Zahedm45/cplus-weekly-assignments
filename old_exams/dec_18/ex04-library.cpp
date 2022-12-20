@@ -54,6 +54,7 @@ void Node<T>::printLeafNodes(){
 template<class T>
 int Node<T>::countMembersOfSubTree(){
 	//put your code here
+    return memberCounter(this, 1);
 }
 
 template<class T>
@@ -75,6 +76,19 @@ void Node<T>::printLeapNodesHelper(Node<T> *pNode) {
     for (const auto &item : pNode->children) {
         printLeapNodesHelper(item);
     }
+}
+
+template<class T>
+int Node<T>::memberCounter(Node<T> *pNode, int i) {
+
+    if (pNode->children.empty()) return i;
+
+    for (const auto &item : pNode->children) {
+        i++;
+        i = memberCounter(item, i);
+    }
+
+    return i;
 }
 
 //Do not modify

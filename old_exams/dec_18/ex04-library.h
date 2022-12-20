@@ -24,6 +24,8 @@ class Node{
     virtual ~Node();
 
     void printLeapNodesHelper(Node<T> *pNode);
+
+    int memberCounter(Node<T> *pNode, int i);
 };
 
 #endif
